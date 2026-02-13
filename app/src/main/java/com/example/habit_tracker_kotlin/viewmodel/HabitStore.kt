@@ -1,7 +1,11 @@
-package com.example.habit_tracker_kotlin.model
+package com.example.habit_tracker_kotlin.viewmodel
 
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateMapOf
+import com.example.habit_tracker_kotlin.viewmodel.AuthStore
+import com.example.habit_tracker_kotlin.model.Habit
+import com.example.habit_tracker_kotlin.model.HabitLog
+import com.example.habit_tracker_kotlin.model.HabitType
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ListenerRegistration
 import java.time.LocalDate

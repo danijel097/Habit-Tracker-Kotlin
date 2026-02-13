@@ -1,6 +1,8 @@
-package com.example.habit_tracker_kotlin.model
+package com.example.habit_tracker_kotlin.viewmodel
 
 import androidx.compose.runtime.mutableStateOf
+import com.example.habit_tracker_kotlin.viewmodel.AuthStore
+import com.example.habit_tracker_kotlin.model.UserProfile
 import com.google.firebase.firestore.FirebaseFirestore
 
 object UserStore {

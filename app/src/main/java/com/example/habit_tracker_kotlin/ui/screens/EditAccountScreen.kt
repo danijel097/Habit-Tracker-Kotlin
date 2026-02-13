@@ -28,7 +28,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.example.habit_tracker_kotlin.model.UserProfile
-import com.example.habit_tracker_kotlin.model.UserStore
+import com.example.habit_tracker_kotlin.viewmodel.UserStore
 
 @Composable
 fun EditAccountScreen(

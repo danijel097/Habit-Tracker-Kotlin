@@ -17,7 +17,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import com.example.habit_tracker_kotlin.model.HabitStore
+import com.example.habit_tracker_kotlin.viewmodel.HabitStore
 import com.example.habit_tracker_kotlin.model.HabitType
 import com.example.habit_tracker_kotlin.ui.components.HabitIcon
 

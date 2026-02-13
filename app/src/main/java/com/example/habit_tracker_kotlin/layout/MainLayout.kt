@@ -11,7 +11,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.NavType
 import androidx.navigation.compose.*
 import androidx.navigation.navArgument
-import com.example.habit_tracker_kotlin.model.AuthStore
+import com.example.habit_tracker_kotlin.viewmodel.AuthStore
 import com.example.habit_tracker_kotlin.navigation.AppRoute
 import com.example.habit_tracker_kotlin.navigation.bottomNavItems
 import com.example.habit_tracker_kotlin.ui.screens.*

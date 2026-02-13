@@ -14,7 +14,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
-import com.example.habit_tracker_kotlin.model.AuthStore
+import com.example.habit_tracker_kotlin.viewmodel.AuthStore
 
 @Composable
 fun RegisterScreen(
