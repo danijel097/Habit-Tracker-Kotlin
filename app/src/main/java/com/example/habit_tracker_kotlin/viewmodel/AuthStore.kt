@@ -47,7 +47,7 @@ object AuthStore {
         auth.createUserWithEmailAndPassword(email, password)
             .addOnSuccessListener {
                 isLoading.value = false
-                UserStore.saveProfile(UserProfile(firstName, lastName, email))
+                UserStore.saveProfile(UserProfile(firstName = firstName, lastName = lastName, email = email))
             }
             .addOnFailureListener { e ->
                 isLoading.value = false

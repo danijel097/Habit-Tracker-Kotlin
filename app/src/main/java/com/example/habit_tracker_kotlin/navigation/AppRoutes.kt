@@ -2,6 +2,7 @@ package com.example.habit_tracker_kotlin.navigation
 
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountCircle
+import androidx.compose.material.icons.filled.AdminPanelSettings
 import androidx.compose.material.icons.filled.History
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.ui.graphics.vector.ImageVector
@@ -17,6 +18,7 @@ sealed class AppRoute(
     data object Home : AppRoute("home", "Home", Icons.Filled.Home)
     data object History : AppRoute("history", "History", Icons.Filled.History)
     data object Account : AppRoute("account", "Account", Icons.Filled.AccountCircle)
+    data object Admin : AppRoute("admin", "Admin", Icons.Filled.AdminPanelSettings)
 
     data object HabitDetails : AppRoute("habit/{habitId}", "Habit", Icons.Filled.AccountCircle) {
         fun createRoute(habitId: String) = "habit/$habitId"

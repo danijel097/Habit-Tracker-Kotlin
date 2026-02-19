@@ -12,6 +12,7 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.*
 import androidx.navigation.navArgument
 import com.example.habit_tracker_kotlin.viewmodel.AuthStore
+import com.example.habit_tracker_kotlin.viewmodel.UserStore
 import com.example.habit_tracker_kotlin.navigation.AppRoute
 import com.example.habit_tracker_kotlin.navigation.bottomNavItems
 import com.example.habit_tracker_kotlin.ui.screens.*
@@ -20,6 +21,7 @@ import com.example.habit_tracker_kotlin.ui.screens.*
 fun MainLayout() {
     val navController = rememberNavController()
     val isAuthenticated = AuthStore.isAuthenticated.value
+    val isAdmin = UserStore.profile.value.isAdmin
 
     if (!isAuthenticated) {
         NavHost(
@@ -44,7 +46,7 @@ fun MainLayout() {
         }
     } else {
         Scaffold(
-            bottomBar = { BottomNavBar(navController = navController) }
+            bottomBar = { BottomNavBar(navController = navController, isAdmin = isAdmin) }
         ) { innerPadding ->
             NavHost(
                 navController = navController,
@@ -108,13 +110,19 @@ fun MainLayout() {
                         onBack = { navController.popBackStack() }
                     )
                 }
+
+                composable(AppRoute.Admin.route) {
+                    AdminScreen()
+                }
             }
         }
     }
 }
 
 @Composable
-private fun BottomNavBar(navController: NavHostController) {
+private fun BottomNavBar(navController: NavHostController, isAdmin: Boolean) {
+    val navItems = if (isAdmin) bottomNavItems + AppRoute.Admin else bottomNavItems
+
     NavigationBar {
         val backStackEntry by navController.currentBackStackEntryAsState()
         val currentDestination = backStackEntry?.destination
@@ -123,7 +131,7 @@ private fun BottomNavBar(navController: NavHostController) {
             it.route == AppRoute.HabitDetails.route || it.route == AppRoute.EditHabit.route || it.route == AppRoute.CreateHabit.route
         } == true
 
-        bottomNavItems.forEach { item ->
+        navItems.forEach { item ->
             val selected = !isOnDetails && currentDestination?.hierarchy?.any {
                 it.route == item.route
             } == true
